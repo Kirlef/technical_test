@@ -1,16 +1,23 @@
 # technical_test_project
 
-A new Flutter project.
+# Proyecto Flutter
 
-## Getting Started
+Este proyecto está desarrollado en **Flutter** y funciona completamente de manera **local**.  
+No hay datasource remoto, por lo que **no se emplea un archivo `.env`** ni manejo de secretos o información sensible.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Instalación de dependencias
+flutter pub get
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Generar mocks
+flutter pub run build_runner build --delete-conflicting-outputs
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Coverage Unit Test
+flutter test --coverage
+
+## Generar informe en html para visualizar cobertura de los test unitarios
+genhtml coverage/lcov.info -o coverage/html
+
+## Integration Test (No terminado)
+flutter test integration_test/app_integration_test.dart
